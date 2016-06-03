@@ -8,7 +8,7 @@ import { Task } from './task.model';
   directives: [TaskListComponent],
   template: `
     <div class="container">
-      <h1>To-Do List</h1>
+      <h1>Nomnomicon</h1>
       <task-list [taskList]="tasks" (onTaskSelect)="taskWasSelected($event)">
       </task-list>
     </div>
@@ -18,21 +18,13 @@ export class AppComponent {
   public tasks: Task[];
   constructor(){
     this.tasks = [
-      new Task("Create To-Do List app.", 0),
-      new Task("Learn Kung Fu", 1),
-      new Task("Do the laundry.", 3),
-      new Task("Rewatch all the Lord of the Rings movies.", 2)
+      new Task("Deviled Eggs", 0),
+      new Task("Blood Orange", 1),
+      new Task("Bloody Mary", 3),
+      new Task("Spaghetti", 2)
     ];
   }
   taskWasSelected(clickedTask: Task): void {
     console.log('parent',clickedTask);
   }
 }
-
-
-// Task model:
-// export class Task {
-//   public done: boolean = false;
-//   constructor(public description: string, public id: number) {
-//   }
-// }
