@@ -12,12 +12,8 @@ import { NewTaskComponent } from './new-task.component';
   directives: [TaskComponent, EditTaskDetailsComponent, NewTaskComponent],
   // templateUrl: 'app/task-list.component.html'
   template: `
-    <task-display *ngFor="#currentTask of taskList" (click)="taskClicked(currentTask)"
-    [class.selected]="currentTask === selectedTask"
-    [task]="currentTask">
-    </task-display>
-    <edit-task-details *ngIf="selectedTask" [task]="selectedTask">
-    </edit-task-details>
+    <task-display *ngFor="#currentTask of taskList" (click)="taskClicked(currentTask)"[class.selected]="currentTask === selectedTask" [task]="currentTask"></task-display>
+    <edit-task-details *ngIf="selectedTask" [task]="selectedTask">   </edit-task-details>
     <new-task (onSubmitNewTask)="createTask($event)"></new-task>
   `
 })
@@ -36,6 +32,11 @@ export class TaskListComponent {
   }
 
   createTask(description: string): void {
-    this.taskList.push(new Task(description, this.taskList.length));
+    this.taskList.push(new Task(name, description, this.taskList.length));
   }
+
+  // createTask(name: string): void {
+  //   this.taskList.push(new Task(name, this.taskList.length));
+  // }
+
 }

@@ -18,10 +18,10 @@ export class AppComponent {
   public tasks: Task[];
   constructor(){
     this.tasks = [
-      new Task("Deviled Eggs", 0),
-      new Task("Blood Orange", 1),
-      new Task("Bloody Mary", 3),
-      new Task("Spaghetti", 2)
+      new Task("Deviled Eggs", "Didn't get any soda on my eggs!", 100),
+      new Task("Blood Orange", "Didn't get any cheese on my fruit!", 71),
+      new Task("Your face", "I only ate half of it!", 103),
+      new Task("Spaghetti", "I feel sick now!", 666)
     ];
   }
   taskWasSelected(clickedTask: Task): void {
